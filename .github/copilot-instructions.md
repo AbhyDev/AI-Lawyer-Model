@@ -29,8 +29,6 @@ This is a **legal document classification system** that automatically categorize
 ## Data Flow
 ```
 legal_stories.csv → train_classifier.py → ./civil_criminal_model/ → legal_classifier.py → classify_legal_text()
-                                                                      ↓
-                                                                   Groq.py (LLM integration)
 ```
 
 ## Key Files & Patterns
@@ -86,16 +84,9 @@ python generate_dataset.py
 
 ## External Integrations
 
-### Groq API (Experimental)
-- `Groq.py` integrates LangChain's ChatGroq with Qwen 3 32B model
-- Uses `GROQ_API_KEY` environment variable (from `.env`)
-- Temperature set to 0.7 for balanced creativity/consistency
-- Possible future use: augmenting dataset, generating case summaries, or legal reasoning
-
 ### Dependencies
 - **torch**: Deep learning framework
 - **transformers**: Hugging Face model library
-- **langchain-groq**: LLM integration
 - **pandas/scikit-learn**: Data handling & metrics
 
 ## Project-Specific Conventions
@@ -124,6 +115,5 @@ python generate_dataset.py
 - Verify model files exist in `./civil_criminal_model/`
 
 ### Extending the Pipeline
-- Add `legal_reasoning.py` to use Groq LLM for case analysis
 - Create API wrapper (FastAPI) around `legal_classifier.classify_legal_text()`
 - Build UI that displays confidence scores & probabilities

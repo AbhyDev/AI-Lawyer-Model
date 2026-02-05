@@ -174,14 +174,6 @@ See `requirements.txt` for the complete list.
 - **Recommended:** 16GB RAM, NVIDIA GPU with 8GB+ VRAM
 - **Model Size:** ~268MB (DistilBERT)
 
-## Environment Variables
-
-Create a `.env` file for optional Groq API integration:
-
-```env
-GROQ_API_KEY=your_api_key_here
-```
-
 ## License
 
 This project is for educational and research purposes.
